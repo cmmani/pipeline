@@ -14,7 +14,7 @@ this.width = width;
 }
 
 
-public int getArea() {ublic
+public int getArea() {
 
 return length * width;
 
