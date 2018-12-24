@@ -9,7 +9,7 @@ sh 'ant -f build.xml -v'
 }
 post {
 always {
-archieve 'dist/*.jar'
+archive 'dist/*.jar'
 }
 }
 }
