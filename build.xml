@@ -1,5 +1,5 @@
  <?xml version="1.0"?>
-<project name="rectangle" default="main" basedir=".">
+<project name="Rectangle-Build" default="main" basedir=".">
 <property environment="env"/>
 
 <!-- Sets variables which can later be used. -->
@@ -42,7 +42,7 @@
 <target name="jar" depends="compile">
 <jar destfile="${dist.dir}\rectangle.jar" basedir="${build.dir}">
 <manifest>
-<attribute name="Main-Class" value="rectangulator" />
+<attribute name="Main-Class" value="Rectangulator" />
 </manifest>
 </jar>
 </target>
