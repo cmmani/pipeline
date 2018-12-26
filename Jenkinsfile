@@ -18,6 +18,12 @@ stages {
                }
           }
     }
+    stage('runnning') {
+        steps {
+	    sh "wget http://localhost/rectangles/all/rectangle_$(env.BUILD_NUMBER).jar"
+	    sh "wget java -jar rectangle_$(env.BUILD_NUMBER) 3 4"
+		}
+}
     post {
      always {
          archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true

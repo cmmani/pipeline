@@ -41,7 +41,27 @@
 
 
 <!--Creates the deployable jar file -->
+<reates the build, docs and dist directory-->
+<target name="makedir">
+<mkdir dir="${build.dir}" />
+<mkdir dir="${docs.dir}" />
+<mkdir dir="${dist.dir}" />
+</target>
+
+
+<!-- Compiles the java code (including the usage of library for JUnit -->
+
+<target name="compile" depends="clean, makedir">
+<javac srcdir="${src.dir}" destdir="${build.dir}">
+<classpath refid="class.path" />
+</javac>
+</target>
+
+
+<!--Creates the deployable jar file -->
 <target name="jar" depends="compile">
+
+
 <jar destfile="${dist.dir}\rectangle_${env.BUILD_NUMBER}.jar" basedir="${build.dir}">
 <manifest>
 <attribute name="Main-Class" value="Rectangulator" />
