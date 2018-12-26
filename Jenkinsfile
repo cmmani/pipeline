@@ -21,7 +21,7 @@ stages {
     stage('runnning') {
         steps {
 	    sh "wget http://192.168.1.6/rectangles/all/rectangle_$(env.BUILD_NUMBER).jar"
-	    sh "wget java -jar rectangle_$(env.BUILD_NUMBER) 6 4"
+	    sh  java -jar rectangle_$(env.BUILD_NUMBER) 6 4
 		}
 }
     post {
