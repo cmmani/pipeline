@@ -17,12 +17,12 @@ stages {
             sh "cp dist/rectangle_${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/"
                }
           }
-    }
-    stage('runnning') {
+     stage('runnning') {
         steps {
 	    sh "wget http://192.168.1.6/rectangles/all/rectangle_$(env.BUILD_NUMBER).jar"
-	    sh  "java -jar rectangle_$(env.BUILD_NUMBER) 6 4"
+	    sh  "java -jar rectangle_$(env.BUILD_NUMBER).jar 6 4"
 		}
+      }
 }
     post {
      always {
